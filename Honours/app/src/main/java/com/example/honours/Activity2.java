@@ -8,25 +8,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
-ImageButton startButton;
+
+public class Activity2 extends AppCompatActivity {
+    Button addition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        startButton = findViewById(R.id.playButton);
-        startButton.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity2);
+        addition = findViewById(R.id.addition);
+        addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                play();
+                playAddition();
             }
         });
+
+
     }
 
-
-    public void play(){
-        Intent intent = new Intent(MainActivity.this, Activity2.class);
+    public void playAddition(){
+        Intent intent = new Intent(Activity2.this, Addition.class);
         startActivity(intent);
     }
-
 }
