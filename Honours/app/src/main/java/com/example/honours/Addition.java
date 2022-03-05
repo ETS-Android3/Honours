@@ -2,6 +2,7 @@ package com.example.honours;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.service.autofill.OnClickAction;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class Addition extends AppCompatActivity {
+public class Addition extends Activity {
     Button choice1;
     Button choice2;
     Button choice3;
