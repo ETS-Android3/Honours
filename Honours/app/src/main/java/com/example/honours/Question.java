@@ -1,5 +1,7 @@
 package com.example.honours;
 
+import java.util.ArrayList;
+
 public class Question {
 
     private final int QuestionID;
@@ -21,6 +23,7 @@ public class Question {
         this.wrongAns1 = wrong1;
         this.wrongAns2 = wrong2;
         this.wrongAns3 = wrong3;
+
 
     }
 
@@ -55,5 +58,13 @@ public class Question {
         return answers;
     }
 
+    public static ArrayList<Question> createQuestions(){
+        Question question1 = new  Question(1,"what is 2+2", 4,3,2,1);
+        Question question2 = new  Question(2,"what is 4+5", 9,8,6,10);
+        ArrayList<Question> questions = new ArrayList<>();
+        questions.add(question1);
+        questions.add(question2);
+        return questions;
+    }
 
 }

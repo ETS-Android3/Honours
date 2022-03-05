@@ -3,6 +3,7 @@ package com.example.honours;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.service.autofill.OnClickAction;
 import android.view.View;
@@ -20,9 +21,6 @@ public class Addition extends Activity {
 int currentQuestion = 0;
 TextView questionDisplay;
 
-
-Question question1 = new  Question(1,"what is 2+2", 4,3,2,1);
-    Question question2 = new  Question(2,"what is 4+5", 9,8,6,10);
     ArrayList<Question> questions = new ArrayList<>();
 
 
@@ -30,8 +28,8 @@ Question question1 = new  Question(1,"what is 2+2", 4,3,2,1);
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_subtract);
-        questions.add(question1);
-        questions.add(question2);
+        questions = Question.createQuestions();
+
        questionDisplay = findViewById(R.id.questionDisplay);
         choice1 = findViewById(R.id.choice1);
         choice2 = findViewById(R.id.choice2);
@@ -42,32 +40,53 @@ Question question1 = new  Question(1,"what is 2+2", 4,3,2,1);
     }
 
 public void answer(View v){
-
+    final MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
            if (v.getId() == R.id.choice1) {
-               if (choice1.getText().equals(questions.get(currentQuestion - 1).getCorrectAnswer())) {
+
+               int chose1 = Integer.parseInt(choice1.getText().toString());
+
+               if (chose1 == (questions.get(currentQuestion - 1).getCorrectAnswer())) {
+
                    System.out.println("correct answer!");
+                   mp.start();
                } else {
+
                    System.out.println("wrong answer!");
                }
                nextQuestion();
            }else if (v.getId() == R.id.choice2) {
-                   if (choice2.getText().equals(questions.get(currentQuestion - 1).getCorrectAnswer())) {
-                       System.out.println("correct answer!");
+
+               int chose2 = Integer.parseInt(choice2.getText().toString());
+
+               if (chose2 == (questions.get(currentQuestion - 1).getCorrectAnswer())) {
+
+                   System.out.println("correct answer!");
+                   mp.start();
                    }else{
                        System.out.println("wrong answer!");
                    }
                    nextQuestion();
            }else if (v.getId() == R.id.choice3) {
-               if (choice3.getText().equals(questions.get(currentQuestion - 1).getCorrectAnswer())) {
+
+               int chose3 = Integer.parseInt(choice3.getText().toString());
+
+               if (chose3 == (questions.get(currentQuestion - 1).getCorrectAnswer())) {
+
                    System.out.println("correct answer!");
+                   mp.start();
                }else{
                    System.out.println("wrong answer!");
                }
                nextQuestion();
            }else if (v.getId() == R.id.choice4) {
-               if (choice4.getText().equals(questions.get(currentQuestion - 1).getCorrectAnswer())) {
+
+               int chose4 = Integer.parseInt(choice4.getText().toString());
+
+               if (chose4 == (questions.get(currentQuestion - 1).getCorrectAnswer())) {
+
                    System.out.println("correct answer!");
-               }else{
+                   mp.start();
+               }else {
                    System.out.println("wrong answer!");
                }
                nextQuestion();
