@@ -8,15 +8,6 @@
     tools:context=".MainActivity"
     android:background="@color/green">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="109dp"
-        android:textSize="32dp"
-        android:text="Monster Maths" />
-
     <ImageButton
         android:id="@+id/playButton"
         android:layout_width="131dp"
@@ -29,6 +20,17 @@
         android:background="@drawable/roundcorner"
         android:src="@android:drawable/ic_media_play"
        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="386dp"
+        android:layout_height="242dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="3dp"
+        android:src="@drawable/monster" />
 
 
 </RelativeLayout>
