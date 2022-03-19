@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.service.autofill.OnClickAction;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,8 +20,12 @@ public class Addition extends Activity {
     Button choice2;
     Button choice3;
     Button choice4;
+    TextView progressText;
+    ProgressBar progressBar;
 int currentQuestion = 0;
+int currentposition = 0;
 TextView questionDisplay;
+int correct = 0;
 
     ArrayList<Question> questions = new ArrayList<>();
 
@@ -28,13 +34,16 @@ TextView questionDisplay;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_subtract);
-        questions = Question.createQuestions();
+        Database database = new Database(Addition.this);
+        questions = database.getQuestions();
 
        questionDisplay = findViewById(R.id.questionDisplay);
         choice1 = findViewById(R.id.choice1);
         choice2 = findViewById(R.id.choice2);
         choice3 = findViewById(R.id.choice3);
         choice4 = findViewById(R.id.choice4);
+        progressText = findViewById(R.id.progressText);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         nextQuestion();
 
     }
@@ -48,6 +57,7 @@ public void answer(View v){
                if (chose1 == (questions.get(currentQuestion - 1).getCorrectAnswer())) {
 
                    System.out.println("correct answer!");
+                   correct++;
                    mp.start();
                } else {
 
@@ -61,6 +71,7 @@ public void answer(View v){
                if (chose2 == (questions.get(currentQuestion - 1).getCorrectAnswer())) {
 
                    System.out.println("correct answer!");
+                   correct++;
                    mp.start();
                    }else{
                        System.out.println("wrong answer!");
@@ -73,6 +84,7 @@ public void answer(View v){
                if (chose3 == (questions.get(currentQuestion - 1).getCorrectAnswer())) {
 
                    System.out.println("correct answer!");
+                   correct++;
                    mp.start();
                }else{
                    System.out.println("wrong answer!");
@@ -85,6 +97,7 @@ public void answer(View v){
                if (chose4 == (questions.get(currentQuestion - 1).getCorrectAnswer())) {
 
                    System.out.println("correct answer!");
+                   correct++;
                    mp.start();
                }else {
                    System.out.println("wrong answer!");
@@ -95,7 +108,15 @@ public void answer(View v){
 
 }
     private void nextQuestion()  {
-        if (currentQuestion < questions.size()) {
+        currentposition++;
+        System.out.println(currentposition);
+        progressBar.setProgress(currentposition);
+        progressText.setText(currentposition + "/20");
+        if ((correct)== (5)){
+            System.out.println("Halfway to new monster!");
+        }
+       // System.out.println(correct);
+        if (currentQuestion < 5) {
             Question q = questions.get(currentQuestion);
             questionDisplay.setText(q.getUserQuestion());
                 int[] answers = q.getAnswers(q);
@@ -118,6 +139,7 @@ public void answer(View v){
 
 
         } else {
+            System.out.println("Questions have all done!");
             //endQuiz();
         }
     }

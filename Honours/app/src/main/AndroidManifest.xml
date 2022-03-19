@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".Activity2"> </activity>
         <activity android:name=".Addition"> </activity>
-
+        <activity android:name=".Rewards"> </activity>
     </application>
 
 </manifest>

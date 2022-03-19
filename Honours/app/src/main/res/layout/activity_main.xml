@@ -18,8 +18,7 @@
         android:layout_marginStart="146dp"
         android:layout_marginTop="302dp"
         android:background="@drawable/roundcorner"
-        android:src="@android:drawable/ic_media_play"
-       />
+        android:src="@android:drawable/ic_media_play" />
 
     <ImageView
         android:id="@+id/imageView"

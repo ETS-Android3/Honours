@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/erino/Desktop/GitHub/Honours/Honours/app/src/main/res/drawable/roundcorner.xml" value="0.198" />
-        <entry key="..\:/Users/erino/Desktop/GitHub/Honours/Honours/app/src/main/res/layout/activity2.xml" value="0.11550151975683891" />
+        <entry key="..\:/Users/erino/Desktop/GitHub/Honours/Honours/app/src/main/res/drawable/roundcorner2.xml" value="0.138" />
+        <entry key="..\:/Users/erino/Desktop/GitHub/Honours/Honours/app/src/main/res/layout/activity2.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/erino/Desktop/GitHub/Honours/Honours/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/erino/Desktop/GitHub/Honours/Honours/app/src/main/res/layout/add_subtract.xml" value="0.2" />
+        <entry key="..\:/Users/erino/Desktop/GitHub/Honours/Honours/app/src/main/res/layout/rewards.xml" value="0.176" />
       </map>
     </option>
   </component>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/reward"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green">
@@ -19,16 +21,30 @@
         android:textSize="60dp" />
 
     <Button
+        android:id="@+id/button2"
+        android:layout_width="340dp"
+        android:layout_height="68dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="506dp"
+        android:background="@drawable/roundcorner2"
+        android:text="Fractions"
+        android:textSize="20dp" />
+
+    <Button
         android:id="@+id/addition"
         android:layout_width="340dp"
         android:layout_height="68dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="238dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="249dp"
+        android:background="@drawable/roundcorner2"
         android:text="Add/Subtracting"
-        android:textSize="18dp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button"
@@ -37,21 +53,22 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="366dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="377dp"
+        android:background="@drawable/roundcorner2"
         android:text="Multiply"
-        android:textSize="18dp" />
+        android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="340dp"
-        android:layout_height="68dp"
-        android:layout_alignParentStart="true"
+    <ImageButton
+        android:id="@+id/rewardBtn"
+        android:layout_width="112dp"
+        android:layout_height="134dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="495dp"
-        android:text="Fractions"
-        android:textSize="18dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@null"
+        android:onClick="rewardsmenu"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
 </RelativeLayout>

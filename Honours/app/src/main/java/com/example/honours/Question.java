@@ -58,12 +58,20 @@ public class Question {
         return answers;
     }
 
+
     public static ArrayList<Question> createQuestions(){
+
         Question question1 = new  Question(1,"what is 2+2", 4,3,2,1);
         Question question2 = new  Question(2,"what is 4+5", 9,8,6,10);
+        Question question3 = new  Question(2,"what is 632-34",598 ,567,589,601);
+        Question question4 = new  Question(1,"what is 2+2", 4,3,2,1);
+        Question question5 = new  Question(2,"what is 4+5", 9,8,6,10);
         ArrayList<Question> questions = new ArrayList<>();
         questions.add(question1);
         questions.add(question2);
+        questions.add(question3);
+        questions.add(question4);
+        questions.add(question5);
         return questions;
     }
 
