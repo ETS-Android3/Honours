@@ -1,16 +1,14 @@
 package com.example.honours;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.service.autofill.OnClickAction;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,6 +18,7 @@ public class Addition extends Activity {
     Button choice2;
     Button choice3;
     Button choice4;
+
     TextView progressText;
     ProgressBar progressBar;
 int currentQuestion = 0;
@@ -44,9 +43,12 @@ int correct = 0;
         choice4 = findViewById(R.id.choice4);
         progressText = findViewById(R.id.progressText);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+
         nextQuestion();
 
     }
+
 
 public void answer(View v){
     final MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
@@ -111,12 +113,12 @@ public void answer(View v){
         currentposition++;
         System.out.println(currentposition);
         progressBar.setProgress(currentposition);
-        progressText.setText(currentposition + "/20");
-        if ((correct)== (5)){
-            System.out.println("Halfway to new monster!");
-        }
+        progressText.setText(currentposition + "/10");
+//        if ((correct)== (5)){
+//            System.out.println("Halfway to new monster!");
+//        }
        // System.out.println(correct);
-        if (currentQuestion < 5) {
+        if (currentQuestion < 10) {
             Question q = questions.get(currentQuestion);
             questionDisplay.setText(q.getUserQuestion());
                 int[] answers = q.getAnswers(q);
@@ -147,32 +149,9 @@ public void answer(View v){
         int rnd = (int) (Math.random() * max);
         return rnd;
     }
-//    public void answer(View view) {
-//        if (view.getId().equals(choice1)) {
-//            if (choice1.getText().equals(questions.get(qNo - 1).getCorrectAnswer())) {
-//              correct.setText("");
-//            }
-////            nextQuestion();
-//        } else if (event.getSource().equals(option2)) {
-//            if (choice2.getText().equals(questions.get(qNo - 1).getCorrectAnswer())) {
-//
-//                correct.setText("" );
-//            }
-//            nextQuestion();
-//        } else if (event.getSource().equals(option3)) {
-//            if (choice3.getText().equals(questions.get(qNo - 1).getCorrectAnswer())) {
-//                score++;
-//                answQuestions.add(questions.get(qNo - 1));
-//                correct.setText("" + score);
-//            }
-//            nextQuestion();
-//        } else if (event.getSource().equals(option4)) {
-//            if (choice4.getText().equals(questions.get(qNo - 1).getCorrectAnswer())) {
-//
-//                correct.setText("" + score);
-//            }
-//            nextQuestion();
-//        }
-//    }
 
+    public void backHome(View v){
+        Intent intent = new Intent(Addition.this, Activity2.class);
+        startActivity(intent);
+    }
 }

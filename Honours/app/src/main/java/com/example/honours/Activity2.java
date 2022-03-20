@@ -35,7 +35,7 @@ System.out.println(monster);
         final int resourceId = resources.getIdentifier(monster,
                 "drawable", getPackageName());
 
-        rewardBtn.setImageResource(R.drawable.one);
+        rewardBtn.setImageResource(resourceId);
 
         rewardBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -18,6 +18,10 @@ public class Database extends SQLiteOpenHelper {
     public static final String COLUMN_WRONGANS_2 = "WRONGANS2";
     public static final String COLUMN_WRONGANS_3 = "WRONGANS3";
 
+    public static final String MONSTERS_TABLE = "MONSTERS_TABLE";
+    public static final String COLUMN_FILEPATH = "FILEPATH";
+    public static final String COLUMN_SOUND = "SOUND";
+    public static final String COLUMN_OWNS = "OWNS";
     public Database(@Nullable Context context) {
         super(context, "users.db", null , 1);
     }
@@ -27,8 +31,8 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTableStatement = "CREATE TABLE " + QUESTIONS_TABLE + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_QUESTION + " TEXT, " + COLUMN_ANSWER + " INT, " + COLUMN_WRONGANS_1 + " INT, " + COLUMN_WRONGANS_2 + " INT, " + COLUMN_WRONGANS_3 + " INT)";
      db.execSQL(createTableStatement);
-//        String createMonster = "CREATE TABLE " + QUESTIONS_TABLE + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_QUESTION + " TEXT, " + COLUMN_ANSWER + " INT, " + COLUMN_WRONGANS_1 + " INT, " + COLUMN_WRONGANS_2 + " INT, " + COLUMN_WRONGANS_3 + " INT)";
-//        db.execSQL(createTableStatement);
+        String createMonster = "CREATE TABLE " + MONSTERS_TABLE + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_FILEPATH + " TEXT, " + COLUMN_SOUND + " TEXT, " + COLUMN_OWNS + " BOOL)";
+        db.execSQL(createMonster);
     }
 //called if database version number changes
     @Override
@@ -77,6 +81,21 @@ questions.add(question);
 cursor.close();
         db.close();
     return questions;
+    }
+
+    public boolean addMonster(Monster monster){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_FILEPATH, monster.getFilePath());
+        cv.put(COLUMN_SOUND, monster.getSound());
+
+
+        long insert = db.insert(MONSTERS_TABLE, null, cv);
+        if (insert == -1){
+            return false;
+        }else {
+            return true;
+        }
     }
 }
 
