@@ -2,6 +2,8 @@ package com.example.honours;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +20,7 @@ public class Addition extends Activity {
     Button choice2;
     Button choice3;
     Button choice4;
+    ImageButton additionMonster;
 
     TextView progressText;
     ProgressBar progressBar;
@@ -43,8 +46,16 @@ int correct = 0;
         choice4 = findViewById(R.id.choice4);
         progressText = findViewById(R.id.progressText);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        additionMonster = (ImageButton)findViewById(R.id.additionMonster);
 
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("badges", 0);
+        String monster = settings.getString("monster", String.valueOf(0));
+        System.out.println(monster);
+        Resources resources = getResources();
+        final int resourceId = resources.getIdentifier(monster,
+                "drawable", getPackageName());
 
+        additionMonster.setImageResource(resourceId);
         nextQuestion();
 
     }

@@ -13,7 +13,7 @@
         android:layout_height="134dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="-10dp"
         android:layout_marginEnd="1dp"
         android:background="@null"
         app:srcCompat="@drawable/ic_launcher_foreground" />
@@ -30,31 +30,6 @@
         android:text="Your Monster:" />
 
     <ImageButton
-        android:id="@+id/monster1"
-        android:layout_width="76dp"
-        android:layout_height="100dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="110dp"
-        android:background="@drawable/one"
-        android:onClick="chooseMonster"
-        app:srcCompat="@drawable/one" />
-
-    <ImageButton
-        android:id="@+id/monster2"
-        android:layout_width="106dp"
-        android:layout_height="95dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="142dp"
-
-        android:background="@drawable/two"
-        android:onClick="chooseMonster" />
-
-    <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="44dp"
         android:layout_height="48dp"
@@ -63,7 +38,35 @@
         android:layout_marginStart="19dp"
         android:layout_marginTop="26dp"
         android:background="?android:attr/homeAsUpIndicator"
+
         android:onClick="goHome" />
+
+    <ImageButton
+        android:id="@+id/monster3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/greythree"
+        android:onClick="chooseMonster"
+        app:srcCompat="@drawable/greythree"
+        tools:srcCompat="@drawable/greythree" />
+
+    <ImageButton
+        android:id="@+id/monster1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="122dp"
+        android:background="@drawable/one"
+        android:onClick="chooseMonster"
+        app:srcCompat="@drawable/one"
+        tools:srcCompat="@drawable/one" />
 
     <TextView
         android:id="@+id/textView2"
@@ -71,9 +74,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="232dp"
         android:text="Momo" />
+
+    <ImageButton
+        android:id="@+id/monster2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="156dp"
+        android:background="@drawable/greybilly"
+        android:onClick="chooseMonster"
+        app:srcCompat="@drawable/greybilly"
+        tools:srcCompat="@drawable/greybilly" />
 
     <TextView
         android:id="@+id/textView3"
@@ -81,9 +98,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="197dp"
-        android:layout_marginTop="217dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="230dp"
         android:text="Bobby" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="294dp"
+        android:layout_marginTop="231dp"
+        android:text="Noodle" />
 
 
 </RelativeLayout>

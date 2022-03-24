@@ -68,9 +68,17 @@ ImageButton startButton;
             editor.putString("monster", path);
 
             editor.apply();
-Monster newmonster = new Monster(1, "one", "onesound", true);
+Monster newmonster = new Monster(1,"monster1", "one", "onesound");
               database.addMonster(newmonster);
             // first time task
+
+
+            SharedPreferences coins = getApplicationContext().getSharedPreferences("coins", 0);
+            SharedPreferences.Editor edd = coins.edit();
+            edd.putInt("coins", 10);
+
+            edd.apply();
+
 
             // record the fact that the app has been started at least once
             settings.edit().putBoolean("my_first_time", false).commit();
