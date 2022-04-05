@@ -15,12 +15,16 @@ import android.widget.ImageButton;
 public class Activity2 extends Activity {
     Button addition;
     ImageButton rewardBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2);
+
         addition = findViewById(R.id.addition);
         rewardBtn = findViewById(R.id.rewardBtn);
+
+        //Listener for selecting adding/subtracting game
         addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,9 +32,12 @@ public class Activity2 extends Activity {
             }
         });
 
+
+        //Accessing the monster badge the user has currently selected from shared preferences
         SharedPreferences settings = getApplicationContext().getSharedPreferences("badges", 0);
         String monster = settings.getString("monster", String.valueOf(0));
-System.out.println(monster);
+
+        //Setting the imageview to the monster user has selected which is stored in shared preferences
         Resources resources = getResources();
         final int resourceId = resources.getIdentifier(monster,
                 "drawable", getPackageName());
@@ -48,13 +55,12 @@ System.out.println(monster);
     }
 
 
-
-    public void rewardsmenu(){
+    public void rewardsmenu() {
         Intent intent = new Intent(Activity2.this, Rewards.class);
         startActivity(intent);
     }
 
-    public void playAddition(){
+    public void playAddition() {
         Intent intent = new Intent(Activity2.this, Addition.class);
         startActivity(intent);
     }

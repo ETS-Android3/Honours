@@ -156,7 +156,7 @@ if (isOwn == true) {
 
                 two.start();
                 System.out.println("Unlocked Monster");
-                dialog.hide();
+                dialog.dismiss();
                 finish();
                 overridePendingTransition(0, 0);
                 startActivity(getIntent());
@@ -229,7 +229,7 @@ if (isOwn == true) {
 
                             three.start();
                             System.out.println("Unlocked Monster");
-                            dialog.hide();
+                            dialog.dismiss();
                             finish();
                             overridePendingTransition(0, 0);
                             startActivity(getIntent());

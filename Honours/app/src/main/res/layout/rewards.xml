@@ -5,16 +5,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green">
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@color/green">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:background="?android:attr/homeAsUpIndicator"
+
+            android:onClick="goHome"
+            tools:layout_editor_absoluteX="4dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/myMonster"
-        android:layout_width="112dp"
-        android:layout_height="134dp"
+        android:layout_width="90dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="-10dp"
-        android:layout_marginEnd="1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="77dp"
         android:background="@null"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
@@ -24,93 +40,97 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="37dp"
-        android:text="Your Monster:" />
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="98dp"
+        android:text="Your Monster:"
+        android:textSize="18dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="44dp"
-        android:layout_height="48dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="26dp"
-        android:background="?android:attr/homeAsUpIndicator"
+        android:layout_marginTop="152dp">
 
-        android:onClick="goHome" />
+        <ImageButton
+            android:id="@+id/monster1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/one"
+            android:onClick="chooseMonster"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/one"
+            tools:srcCompat="@drawable/one" />
 
-    <ImageButton
-        android:id="@+id/monster3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/greythree"
-        android:onClick="chooseMonster"
-        app:srcCompat="@drawable/greythree"
-        tools:srcCompat="@drawable/greythree" />
+        <ImageButton
+            android:id="@+id/monster3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/greythree"
+            android:onClick="chooseMonster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/greythree"
+            tools:srcCompat="@drawable/greythree" />
 
-    <ImageButton
-        android:id="@+id/monster1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="122dp"
-        android:background="@drawable/one"
-        android:onClick="chooseMonster"
-        app:srcCompat="@drawable/one"
-        tools:srcCompat="@drawable/one" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="94dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Bobby"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/monster2"
+            app:fontFamily="@font/sassoonprimary"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="232dp"
-        android:text="Momo" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="89dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:gravity="center"
+            android:text="Noodle"
+            android:textSize="18dp"
+            app:fontFamily="@font/sassoonprimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monster3" />
 
-    <ImageButton
-        android:id="@+id/monster2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="156dp"
-        android:background="@drawable/greybilly"
-        android:onClick="chooseMonster"
-        app:srcCompat="@drawable/greybilly"
-        tools:srcCompat="@drawable/greybilly" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="64dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Momo"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monster1"
+            app:fontFamily="@font/sassoonprimary"
+            />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="230dp"
-        android:text="Bobby" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="294dp"
-        android:layout_marginTop="231dp"
-        android:text="Noodle" />
+        <ImageButton
+            android:id="@+id/monster2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/greybilly"
+            android:onClick="chooseMonster"
+            app:layout_constraintEnd_toStartOf="@+id/monster3"
+            app:layout_constraintStart_toEndOf="@+id/monster1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/greybilly"
+            tools:srcCompat="@drawable/greybilly" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>
