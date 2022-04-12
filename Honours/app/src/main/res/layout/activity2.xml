@@ -8,93 +8,109 @@
     android:background="@color/green">
 
 
-    <TextView
-        android:layout_width="239dp"
-        android:layout_height="66dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="99dp"
-        android:fontFamily="@font/sassoonprimary"
-        android:text="topics"
-        android:textColor="@color/white"
-        android:textSize="55dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/backToStart"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:background="?android:attr/homeAsUpIndicator"
+
+            android:onClick="returntoMain"
+            tools:layout_editor_absoluteX="4dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="340dp"
-        android:layout_height="68dp"
+        android:id="@+id/multiplyButt"
+        android:layout_width="310dp"
+        android:layout_height="80dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="506dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="449dp"
         android:background="@drawable/roundcorner2"
-        android:fontFamily="@font/comic"
-        android:text="Fractions"
-        android:textSize="20dp" />
+        android:drawableLeft="@drawable/crossed"
+        android:fontFamily="@font/sassoonprimary"
+        android:gravity="center"
+        android:onClick="playMultiplication"
+        android:text="Multiply"
+        android:textSize="26sp"
+        tools:layout_centerHorizontal="false" />
 
     <Button
         android:id="@+id/addition"
-        android:layout_width="340dp"
-        android:layout_height="68dp"
+        android:layout_width="310dp"
+        android:layout_height="80dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="249dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="298dp"
         android:background="@drawable/roundcorner2"
+        android:drawableLeft="@drawable/add"
         android:fontFamily="@font/sassoonprimary"
-        android:text="Add/Subtracting"
-        android:textSize="20sp" />
+        android:padding="10dp"
+        android:text="Add/Subtract"
+        android:textSize="26sp"
+        tools:layout_centerHorizontal="false" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="340dp"
-        android:layout_height="68dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="377dp"
-        android:background="@drawable/roundcorner2"
-        android:fontFamily="@font/comic"
-        android:text="Multiply"
-        android:textSize="20dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="135dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/money"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/money" />
+
+        <TextView
+            android:id="@+id/coinAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="left"
+            android:text="0"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toStartOf="@id/imageView2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:fontFamily="@font/sassoonmedium" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/rewardBtn"
-        android:layout_width="112dp"
-        android:layout_height="134dp"
+        android:layout_width="102dp"
+        android:layout_height="126dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="-11dp"
-        android:layout_marginEnd="1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="-1dp"
         android:background="@null"
         android:onClick="rewardsmenu"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="63dp"
-        android:layout_height="66dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/money"
-        tools:srcCompat="@drawable/money" />
-
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="89dp"
-        android:layout_marginTop="42dp"
-        android:fontFamily="@font/comic"
-        android:text="0" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="184dp"
+        android:fontFamily="@font/sassoonmedium"
+        android:text="Categories"
+        android:textColor="@color/white"
+        android:textSize="50sp" />
 
 </RelativeLayout>

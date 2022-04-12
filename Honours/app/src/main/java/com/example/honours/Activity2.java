@@ -1,7 +1,5 @@
 package com.example.honours;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,19 +8,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 public class Activity2 extends Activity {
-    Button addition;
-    ImageButton rewardBtn;
+    Button addition,multiplyButt;
+    ImageButton rewardBtn,returnHome;
+    TextView coinAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2);
-
+        multiplyButt = findViewById(R.id.multiplyButt);
         addition = findViewById(R.id.addition);
         rewardBtn = findViewById(R.id.rewardBtn);
+        coinAmount = findViewById(R.id.coinAmount);
+
+        returnHome = findViewById(R.id.backToStart);
+
+
+
 
         //Listener for selecting adding/subtracting game
         addition.setOnClickListener(new View.OnClickListener() {
@@ -51,17 +57,36 @@ public class Activity2 extends Activity {
             }
         });
 
+        SharedPreferences coins = getApplicationContext().getSharedPreferences("coins", 0);
+        int coin = coins.getInt("coins", 0);
+
+        coinAmount.setText(String.valueOf(coin));
 
     }
-
+    public void returntoMain(View v) {
+        Intent intent = new Intent(Activity2.this, MainActivity.class);
+        startActivity(intent);
+    }
 
     public void rewardsmenu() {
+
         Intent intent = new Intent(Activity2.this, Rewards.class);
+
+        startActivity(intent);
+    }
+    public void playMultiplication(View v) {
+
+        String multiply = "multiply";
+        Intent intent = new Intent(Activity2.this, Addition.class);
+        intent.putExtra("category", multiply);
         startActivity(intent);
     }
 
     public void playAddition() {
+
+String addition = "addition";
         Intent intent = new Intent(Activity2.this, Addition.class);
-        startActivity(intent);
+        intent.putExtra("category", addition);
+           startActivity(intent);
     }
 }

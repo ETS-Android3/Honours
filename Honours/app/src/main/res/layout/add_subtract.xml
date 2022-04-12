@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/green">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -91,18 +91,47 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="58dp"
+        android:layout_height="60dp"
         android:background="@color/white">
 
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="57dp"
             android:layout_height="57dp"
+            android:layout_marginTop="-1dp"
+
             android:background="?android:attr/homeAsUpIndicator"
             android:onClick="backHome"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="7dp" />
 
-            tools:layout_editor_absoluteX="7dp"
-            tools:layout_editor_absoluteY="-1dp" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="260dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:indeterminate="false"
+            android:max="10"
+            android:minHeight="50dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/progressbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/money"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/money"
+            tools:layout_editor_absoluteY="0dp"
+            tools:srcCompat="@drawable/money" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
@@ -113,29 +142,42 @@
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="false"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="9dp"
         android:layout_marginRight="10dp"
         android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/one"
         tools:srcCompat="@drawable/one" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="293dp"
-        android:layout_height="10dp"
+    <TextView
+        android:id="@+id/noOfQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="22dp"
-        android:layout_weight="1"
-        android:indeterminate="false"
-        android:max="10"
-        android:minHeight="50dp"
-        android:progress="0"
-        android:progressDrawable="@drawable/progressbar" />
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="148dp"
+        android:fontFamily="@font/sassoonmedium"
+        android:text="Q1"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/ic_edit"
+        android:onClick="draw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_edit"
+        tools:srcCompat="@drawable/ic_edit" />
 
 </RelativeLayout>
