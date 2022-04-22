@@ -12,9 +12,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class PaintView extends View {
-public LayoutParams params;
-private Path path = new Path();
-private Paint brush = new Paint();
+    public LayoutParams params;
+    private Path path = new Path();
+    private Paint brush = new Paint();
+
     public PaintView(Context context) {
         super(context);
         brush.setAntiAlias(true);
@@ -23,22 +24,22 @@ private Paint brush = new Paint();
         brush.setStrokeJoin(Paint.Join.ROUND);
         brush.setStrokeWidth(8f);
         setBackgroundColor(Color.parseColor("#ffffff"));
-      
-   // params = new LayoutParams(500, 500);
+
+        // params = new LayoutParams(500, 500);
         this.setLayoutParams(new LinearLayout.LayoutParams(20, 300));
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float pointX = event.getX();
-        float pointY =event.getY();
+        float pointY = event.getY();
 
-        switch(event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                path.moveTo(pointX,pointY);
+                path.moveTo(pointX, pointY);
                 return true;
             case MotionEvent.ACTION_MOVE:
-                path.lineTo(pointX,pointY);
+                path.lineTo(pointX, pointY);
                 break;
             default:
                 return false;
@@ -49,6 +50,6 @@ private Paint brush = new Paint();
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawPath(path,brush);
+        canvas.drawPath(path, brush);
     }
 }

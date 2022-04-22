@@ -13,8 +13,6 @@ public class Question {
     private final int category;
 
 
-
-
     public Question(int questID, String quest, int correct, int wrong1, int wrong2, int wrong3, int category) {
 
         this.QuestionID = questID;
@@ -23,7 +21,7 @@ public class Question {
         this.wrongAns1 = wrong1;
         this.wrongAns2 = wrong2;
         this.wrongAns3 = wrong3;
-this.category = category;
+        this.category = category;
 
     }
 
@@ -52,14 +50,15 @@ this.category = category;
     public int getWrongAnswer3() {
         return this.wrongAns3;
     }
+
     public int getCategory() {
         return this.category;
     }
-    public int[] getAnswers(Question q){
+
+    public int[] getAnswers(Question q) {
         int[] answers = {q.getCorrectAnswer(), q.getWrongAnswer1(), q.getWrongAnswer2(), q.getWrongAnswer3()};
         return answers;
     }
-
 
 
 }

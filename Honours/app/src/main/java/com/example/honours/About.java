@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 public class About extends Activity {
     TextView totalcorrect, qA;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,7 +31,7 @@ public class About extends Activity {
         qA.setText(String.valueOf(quests));
     }
 
-    public void backToStart(View v){
+    public void backToStart(View v) {
         Intent intent = new Intent(About.this, MainActivity.class);
         startActivity(intent);
 

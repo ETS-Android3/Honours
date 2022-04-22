@@ -111,7 +111,7 @@ public class Rewards extends Activity {
 
 
     public void goHome(View v) {
-        Intent intent = new Intent(Rewards.this, Activity2.class);
+        Intent intent = new Intent(Rewards.this, Category.class);
         startActivity(intent);
     }
 
@@ -435,6 +435,9 @@ public class Rewards extends Activity {
 
 
             }
+            //
+            // CHOOSE MONSTER 6
+            //
         } else if (v.getId() == R.id.monster6) {
 
             //Creating mediaplayer to play sound
@@ -504,6 +507,9 @@ public class Rewards extends Activity {
 
 
             }
+            //
+            // CHOOSE MONSTER 7
+            //
         } else if (v.getId() == R.id.monster7) {
 
             //Creating mediaplayer to play sound
@@ -573,6 +579,9 @@ public class Rewards extends Activity {
 
 
             }
+            //
+            // CHOOSE MONSTER 8
+            //
         } else if (v.getId() == R.id.monster8) {
 
             //Creating mediaplayer to play sound
@@ -642,6 +651,9 @@ public class Rewards extends Activity {
 
 
             }
+            //
+            // CHOOSE MONSTER 9
+            //
         } else if (v.getId() == R.id.monster9) {
 
             //Creating mediaplayer to play sound
@@ -733,6 +745,11 @@ public class Rewards extends Activity {
         }
 
         return false;
+    }
+
+    public void playSound(View v) {
+        final MediaPlayer money = MediaPlayer.create(this, R.raw.money);
+        money.start();
     }
 
 }

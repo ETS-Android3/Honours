@@ -19,8 +19,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class Addition extends Activity {
-    Button choice1, choice2, choice3, choice4,ok,redo, goBack;
+public class Quiz extends Activity {
+    Button choice1, choice2, choice3, choice4, ok, redo, goBack, selectOkay, selectCancel;
 
     ImageButton additionMonster;
     MediaPlayer mp;
@@ -29,7 +29,7 @@ public class Addition extends Activity {
     ProgressBar progressBar;
     int currentQuestion = 0;
     int currentposition = 0;
-    TextView questionDisplay, noOfQ,wrongAns,correctAns,questAsk;
+    TextView questionDisplay, noOfQ, wrongAns, correctAns, questAsk;
     int correct = 0;
 
     ArrayList<Question> questions = new ArrayList<>();
@@ -39,16 +39,16 @@ public class Addition extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_subtract);
+        setContentView(R.layout.quiz);
         Bundle bundle = getIntent().getExtras();
         String category = bundle.getString("category");
         System.out.println(category);
-        Database database = new Database(Addition.this);
+        Database database = new Database(Quiz.this);
 
-        if(category.equals("addition")){
+        if (category.equals("addition")) {
             System.out.println("addition");
-           allquestions = database.getaddQuestions(1);
-        }else if(category.equals("multiply")){
+            allquestions = database.getaddQuestions(1);
+        } else if (category.equals("multiply")) {
             System.out.println("multiply");
             allquestions = database.getaddQuestions(2);
         }
@@ -109,7 +109,7 @@ public class Addition extends Activity {
             } else {
                 String wrong = choice1.getText().toString();
                 String right = Integer.toString(questions.get(currentQuestion - 1).getCorrectAnswer());
-showFeedback(wrong,right, questions.get(currentQuestion - 1).getUserQuestion() );
+                showFeedback(wrong, right, questions.get(currentQuestion - 1).getUserQuestion());
 
             }
             nextQuestion();
@@ -125,7 +125,7 @@ showFeedback(wrong,right, questions.get(currentQuestion - 1).getUserQuestion() )
             } else {
                 String wrong = choice2.getText().toString();
                 String right = Integer.toString(questions.get(currentQuestion - 1).getCorrectAnswer());
-                showFeedback(wrong,right,questions.get(currentQuestion - 1).getUserQuestion());
+                showFeedback(wrong, right, questions.get(currentQuestion - 1).getUserQuestion());
             }
             nextQuestion();
         } else if (v.getId() == R.id.choice3) {
@@ -140,7 +140,7 @@ showFeedback(wrong,right, questions.get(currentQuestion - 1).getUserQuestion() )
             } else {
                 String wrong = choice3.getText().toString();
                 String right = Integer.toString(questions.get(currentQuestion - 1).getCorrectAnswer());
-                showFeedback(wrong,right,questions.get(currentQuestion - 1).getUserQuestion());
+                showFeedback(wrong, right, questions.get(currentQuestion - 1).getUserQuestion());
             }
             nextQuestion();
         } else if (v.getId() == R.id.choice4) {
@@ -155,7 +155,7 @@ showFeedback(wrong,right, questions.get(currentQuestion - 1).getUserQuestion() )
             } else {
                 String wrong = choice4.getText().toString();
                 String right = Integer.toString(questions.get(currentQuestion - 1).getCorrectAnswer());
-                showFeedback(wrong,right,questions.get(currentQuestion - 1).getUserQuestion());
+                showFeedback(wrong, right, questions.get(currentQuestion - 1).getUserQuestion());
             }
             nextQuestion();
 
@@ -232,9 +232,8 @@ showFeedback(wrong,right, questions.get(currentQuestion - 1).getUserQuestion() )
 
             coined.apply();
             System.out.println("Questions have all done!");
-            AlertDialog.Builder builder = new AlertDialog.Builder(Addition.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(Quiz.this);
             View view = getLayoutInflater().inflate(R.layout.finishedalert, null);
-
 
 
             builder.setView(view);
@@ -277,7 +276,7 @@ showFeedback(wrong,right, questions.get(currentQuestion - 1).getUserQuestion() )
     public void draw(View v) {
         PaintView paintview = new PaintView(this);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(Addition.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(Quiz.this);
         paintview.setLayoutParams(new ViewGroup.LayoutParams(10, 10));
         builder.setView(paintview);
         AlertDialog dialog = builder.create();
@@ -286,8 +285,8 @@ showFeedback(wrong,right, questions.get(currentQuestion - 1).getUserQuestion() )
         dialog.getWindow().setLayout(1000, 1300);
     }
 
-    public void showFeedback(String wrong, String right, String questAsked){
-        AlertDialog.Builder builder = new AlertDialog.Builder(Addition.this);
+    public void showFeedback(String wrong, String right, String questAsked) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Quiz.this);
         View view = getLayoutInflater().inflate(R.layout.feedbackalert, null);
         ok = view.findViewById(R.id.ok);
         correctAns = view.findViewById(R.id.correctAns);
@@ -304,13 +303,49 @@ showFeedback(wrong,right, questions.get(currentQuestion - 1).getUserQuestion() )
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              dialog.dismiss();
+                dialog.dismiss();
             }
         });
     }
+
     //Go back to category page
     public void backHome(View v) {
-        Intent intent = new Intent(Addition.this, Activity2.class);
+        Intent intent = new Intent(Quiz.this, Category.class);
         startActivity(intent);
+    }
+
+    public void playMoney(View v) {
+        final MediaPlayer money = MediaPlayer.create(this, R.raw.money);
+        money.start();
+    }
+
+    //Go back to category page
+    public void goToRewards(View v) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Quiz.this);
+        View view = getLayoutInflater().inflate(R.layout.changemonsteralert, null);
+        selectOkay = view.findViewById(R.id.selectOkay);
+        selectCancel = view.findViewById(R.id.selectCancel);
+
+
+        builder.setView(view);
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+
+        selectOkay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Intent intent = new Intent(Quiz.this, Rewards.class);
+                startActivity(intent);
+            }
+        });
+        selectCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+
+            }
+        });
     }
 }

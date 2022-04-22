@@ -19,8 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity2"> </activity>
-        <activity android:name=".Addition"> </activity>
+        <activity android:name=".Category"> </activity>
+        <activity android:name=".Quiz"> </activity>
         <activity android:name=".Rewards"> </activity>
         <activity android:name=".About"> </activity>
     </application>

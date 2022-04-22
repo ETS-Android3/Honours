@@ -68,7 +68,7 @@ public class Database extends SQLiteOpenHelper {
     public ArrayList<Question> getaddQuestions(int query) {
 
         ArrayList<Question> questions = new ArrayList<>();
-        String queryString = "SELECT * FROM " + QUESTIONS_TABLE + " WHERE " + COLUMN_CATEGORY + " = '"+ query +"'";
+        String queryString = "SELECT * FROM " + QUESTIONS_TABLE + " WHERE " + COLUMN_CATEGORY + " = '" + query + "'";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(queryString, null);
         if (cursor.moveToFirst()) {
@@ -82,7 +82,7 @@ public class Database extends SQLiteOpenHelper {
                 int wrongans3 = cursor.getInt(5);
                 int category = cursor.getInt(6);
 
-                Question question = new Question(questionID, quest, answer, wrongans1, wrongans2, wrongans3,category);
+                Question question = new Question(questionID, quest, answer, wrongans1, wrongans2, wrongans3, category);
                 questions.add(question);
             } while (cursor.moveToNext());
         } else {
@@ -123,7 +123,7 @@ public class Database extends SQLiteOpenHelper {
                 int id = cursor.getInt(0);
                 String monsterID = cursor.getString(1);
                 String filepath = cursor.getString(2);
-                String sound  = cursor.getString(3);
+                String sound = cursor.getString(3);
 
 
                 Monster monster = new Monster(id, monsterID, filepath, sound);
